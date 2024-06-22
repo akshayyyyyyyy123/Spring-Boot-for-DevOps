@@ -1,0 +1,61 @@
+Miscellaneous
+
+1. server.xml
+	- The server.xml file is a configuration file used by Apache Tomcat, a popular Java Servlet Container.
+	- This file configures how Tomcat serves applications and handles requests.
+
+	What does it contain?
+
+		i) Server Element(top-level element): defines the entire server configuration. It s like a secret code word used to safely turn off the server.
+		- To turn off the server, connect to the port 8005 and type "SHUTDOWN".
+		- This element defines the overall config for the tomcat server instance.se
+			# telnet localhost 8005
+			# 'SHUTDOWN'
+		<Server port="8005" shutdown="SHUTDOWN">
+
+
+		ii) Service Element:
+			- used to define a group of settings that control how Tomcat processes incoming requests for a specific service. 
+			- "Catalina" is just a name for this particular service group within Tomcat.
+			- Defines a collection of Connectors and an Engine. 
+			<Service name="Catalina">
+
+		iii) Connector Element: defines how tomcat receives requests. It listens for client requests on a specific port.
+			<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" />
+
+		iv) Engine Element: This part processes the incoming requests and determines how to handle them.
+			<Engine name="Catalina" defaultHost="localhost">
+
+		v) Host Element: Defines a virtual host, which is a domain or subdomain.
+			<Host name="localhost" appBase="webapps"
+      unpackWARs="true" autoDeploy="true">
+
+      vi) Context Element: defines a web app that is to be ran within selected virtual host.
+			 <Context path="" docBase="myapp" reloadable="true"/>
+
+EXAMPLE:
+	<Server port="8005" shutdown="SHUTDOWN">
+    <Service name="Catalina">
+
+        <!-- Connector for HTTP requests on port 8080 -->
+        <Connector port="8080" protocol="HTTP/1.1"
+                   connectionTimeout="20000"
+                   redirectPort="8443" />
+
+        <!-- Engine that processes requests -->
+        <Engine name="Catalina" defaultHost="localhost">
+
+            <!-- Host for the localhost domain -->
+            <Host name="localhost" appBase="webapps"
+                  unpackWARs="true" autoDeploy="true">
+
+                <!-- Context for the web application -->
+                <Context path="" docBase="myapp" reloadable="true"/>
+                
+            </Host>
+        </Engine>
+    </Service>
+</Server>
+
+
+	
