@@ -1,1 +1,49 @@
 Maven Project Folder Structure
+
+my-spring-boot-app/
+├── src/
+│   ├── main/
+│   │   ├── java/
+│   │   │   └── com/
+│   │   │       └── example/
+│   │   │           └── myapp/
+│   │   │               ├── Application.java
+│   │   │               ├── controller/
+│   │   │               │   └── MyController.java
+│   │   │               ├── service/
+│   │   │               │   └── MyService.java
+│   │   │               ├── repository/
+│   │   │               │   └── MyRepository.java
+│   │   │               ├── model/
+│   │   │               │   └── MyModel.java
+│   │   │               └── config/
+│   │   │                   └── AppConfig.java
+│   │   ├── resources/
+│   │   │   ├── static/
+│   │   │   │   ├── css/
+│   │   │   │   │   └── styles.css
+│   │   │   │   ├── js/
+│   │   │   │   │   └── scripts.js
+│   │   │   │   └── images/
+│   │   │   │       └── logo.png
+│   │   │   ├── templates/
+│   │   │   │   └── index.html
+│   │   │   ├── application.properties
+│   │   │   ├── application.yml
+│   │   │   ├── messages.properties
+│   │   │   ├── logback-spring.xml
+│   │   │   └── data.sql
+│   │   └── webapp/
+│   │       └── WEB-INF/
+│   │           └── web.xml
+│   ├── test/
+│   │   └── java/
+│   │       └── com/
+│   │           └── example/
+│   │               └── myapp/
+│   │                   └── MyAppTests.java
+├── .gitignore
+├── mvnw
+├── mvnw.cmd
+├── pom.xml
+└── README.md
