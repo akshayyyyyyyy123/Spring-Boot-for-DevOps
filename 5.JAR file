@@ -1,0 +1,76 @@
+* JAR (Java Archive):
+
+  -> PURPOSE
+	- JAR files are primarily used for packaging Java classes, libraries, resources, and metadata into a single compressed file. They are used for standalone Java applications or libraries.
+
+    - Java classes, dependenices, config files, libraries are packaged into a single file for distribution, deployment and execution.
+
+
+   -> STRUCTURE
+	  - Compiled Classes: Contains .class files which are the compiled bytecode of Java source files.
+
+	  -  Resources: May include resources such as images, properties files, or any other data files needed by the application.
+
+	  - META-INF Directory: Contains metadata about the JAR file. Key files in this directory include: 
+	      - MANIFEST.MF: A manifest file that can contain information about the files in the JAR, such as the main class to run when the JAR is executed.
+
+my-spring-boot-app.jar
+|-- BOOT-INF/
+|   |-- classes/
+|   |   |-- com/
+|   |   |   |-- example/
+|   |   |       |-- MySpringBootApplication.class
+|   |   |       |-- service/
+|   |   |           |-- MyService.class
+|   |   |-- application.properties
+|   |   |-- static/
+|   |       |-- index.html
+|   |-- lib/
+|       |-- spring-core-5.3.8.jar
+|       |-- spring-boot-starter-web-2.5.2.jar
+|       |-- mysql-connector-java-8.0.25.jar
+|-- META-INF/
+|   |-- MANIFEST.MF
+|-- org/
+|   |-- springframework/
+|       |-- boot/
+|           |-- loader/
+|               |-- JarLauncher.class
+|               |-- WarLauncher.class
+|-- application.properties
+	
+	-> Root Directory has:
+			i) Compiled classes (.class) of your java programs
+			ii) Resources contains non-code resources required by the application, such as configuration files, images, and other data files.
+
+	-> META-INF Directory
+			i) MANIFEST.MF:
+				- A special file that contains metadata about the JAR file.
+				- It can specify the main class of the application, version information, and other configuration details.
+				example: 
+				    	Manifest-Version: 1.0
+						Main-Class: com.example.MainClass
+
+	-> BOOT-INF Directory (/classes and /lib)
+			i) BOOT-INF/classes: Contains the compiled classes (.class) and application.properties files.
+						BOOT-INF/classes/
+						|-- com/
+						|   |-- example/
+						|       |-- MySpringBootApplication.class
+						|       |-- service/
+						|           |-- MyService.class
+						|-- application.properties
+
+			ii) BOOT-INF/lib: Contains the JAR files of all dependencies required by the application.			
+					       BOOT-INF/lib/
+						   |-- spring-core-5.3.8.jar
+						   |-- spring-boot-starter-web-2.5.2.jar
+						   |-- mysql-connector-java-8.0.25.jar
+
+
+	-> SUMMARY
+		Root Directory: Contains the main contents of the JAR, including all classes and resources, organized according to their package structure.
+		META-INF Directory: Contains the MANIFEST.MF file and any other metadata necessary for the application or library.					
+		BOOT-INF Directory: contains all the compiled classes of your java program and dependencies required by application.
+
+	

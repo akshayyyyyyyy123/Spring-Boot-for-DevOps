@@ -1,0 +1,13 @@
+- A web server is a computer system that hosts websites and delivers web pages to users browsers upon request.
+
+Working:
+
+- Hosting Websites: The web server stores all the files, images, scripts, and data that make up a website. 
+
+- Handling Requests: When you type a website address into your browser and hit enter, your browser sends a request to the web server where that website is hosted.
+
+- Serving Content: The web server processes the request and sends the appropriate web pages back to your browser. This process is often called "serving" the web pages.
+
+- Using Protocols: Web servers use HTTP (HyperText Transfer Protocol) or HTTPS (HTTP Secure) to communicate with your browser, ensuring the data is transferred correctly and securely.
+
+Web server is like a librarian who fetches the right book (web page) from the library (server) when you ask for it (enter a URL).
